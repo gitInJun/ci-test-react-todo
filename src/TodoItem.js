@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TodoItem = (todo) => {
-    const {id, text, done} = todo;
+const TodoItem = ({todo}) => {
+    const { id, text, done } = todo;
 
     return (
         <li>
-            <span>{text}</span>
+            <span style={{textDecoration: done ? 'line-through' : 'none'}}>{text}</span>
             <button>삭제</button>
         </li>
     );
