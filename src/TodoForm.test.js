@@ -19,7 +19,7 @@ describe('TodoForm', () => {
         expect(input).toHaveAttribute('value', 'TDD 배우기');
     });
     it('calls onIsert and clears input', () => {
-        const onIsert = jest.fn();
+        const onInsert = jest.fn();
         const { getByText, getByPlaceholderText } = render(<TodoForm onInsert={onInsert} />);
         const input = getByPlaceholderText('할 일을 입력하세요');
         const button = getByText('등록');
@@ -31,7 +31,7 @@ describe('TodoForm', () => {
         });
         // 버튼 클릭시키기
         fireEvent.click(button);
-        expect(onIsert).toBeCalledWith('TDD 배우기');
+        expect(onInsert).toBeCalledWith('TDD 배우기');
         expect(input).toHaveAttribute('value', '');
     });
 });
